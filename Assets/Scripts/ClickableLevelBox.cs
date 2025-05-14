@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameUIManager : MonoBehaviour
+public class ClickableLevelBox : MonoBehaviour
 {
-    public void MainMenuButton()
-    {
-        Debug.Log("MainMenuButton Basildi");
+    public string sceneToLoad;
 
-        SceneManager.LoadScene("MainScene");
-    }
-
-    public void Level1Button ()
+    public void OnMouseDown()
     {
         Debug.Log("Level1Button Basildi");
 
