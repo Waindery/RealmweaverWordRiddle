@@ -16,6 +16,13 @@ public class GameUIManager : MonoBehaviour
     {
         Debug.Log("Level1Button Basildi");
 
-        SceneManager.LoadScene("Level1Scene");
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Level2Button()
+    {
+        Debug.Log("Level2Button Basildi");
+
+        SceneManager.LoadScene("Sample2Scene");
     }
 }

@@ -11,6 +11,6 @@ public class ClickableLevelBox : MonoBehaviour
     {
         Debug.Log("Level1Button Basildi");
 
-        SceneManager.LoadScene("Level1Scene");
+        SceneManager.LoadScene("SampleScene");
     }
 }
