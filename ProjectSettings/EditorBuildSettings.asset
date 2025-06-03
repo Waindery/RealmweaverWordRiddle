@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game2Scene.unity
     guid: 197df8e165021ab439bc5ef506b1d226
+  - enabled: 1
+    path: Assets/WordQuiz/Sample2Scene.unity
+    guid: 365e6054c4cf54845abe42df0f0cd348
   m_configObjects: {}
