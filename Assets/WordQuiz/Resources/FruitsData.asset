@@ -19,9 +19,9 @@ MonoBehaviour:
     answer: trojan
   - questionImage: {fileID: 21300000, guid: 4eba695457c4cf844af32b567cb6f4d8, type: 3}
     answer: "sh\u0131p"
-  - questionImage: {fileID: 21300000, guid: 0c1fbe651e0e984478e950eab3e50305, type: 3}
-    answer: lemon
-  - questionImage: {fileID: 21300000, guid: 6645a7ed04e10fb4ca319380046b78b2, type: 3}
-    answer: pear
-  - questionImage: {fileID: 21300000, guid: 07f937f1d4845214a8bceb355bde0410, type: 3}
-    answer: plum
+  - questionImage: {fileID: 21300000, guid: 125d68d5bcb5af440b34114a4cd5ca2c, type: 3}
+    answer: "f\u0131re"
+  - questionImage: {fileID: 21300000, guid: 37a5a2b5848c3bd4f89ff2089ea1aba3, type: 3}
+    answer: "sh\u0131eld"
+  - questionImage: {fileID: 21300000, guid: e03662f4b1d089249929d267bf410802, type: 3}
+    answer: grape
