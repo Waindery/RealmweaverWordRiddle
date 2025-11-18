@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WordQuiz/Sample2Scene.unity
     guid: 365e6054c4cf54845abe42df0f0cd348
+  - enabled: 1
+    path: Assets/Scenes/CinematicScene.unity
+    guid: a9e95155e843d8f4bbf806ec884c57ac
+  - enabled: 1
+    path: Assets/Scenes/Cinematic2Scene.unity
+    guid: 679df20ac617cec4da5782d7416d3726
   m_configObjects: {}

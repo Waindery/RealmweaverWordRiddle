@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("PlayButton Basildi");
 
-        // Load cinematic scene first
+
         SceneManager.LoadScene("CinematicScene");
     }
 
@@ -18,9 +18,18 @@ public class UIManager : MonoBehaviour
         Debug.Log("OptionsButton Basildi");
     }
 
-    public void CreditsButton()
+    public void Continue1Button()
     {
-        Debug.Log("CreditsButton Basildi");
+        Debug.Log("Continue1Button Basildi");
+
+        SceneManager.LoadScene("Cinematic2Scene");
+    }
+
+    public void Continue2Button()
+    {
+        Debug.Log("Continue2Button Basildi");
+
+        SceneManager.LoadScene("GameScene");
     }
 
     public void ExitButton()

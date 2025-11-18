@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FruitsData
   m_EditorClassIdentifier: 
   questions:
-  - questionImage: {fileID: 21300000, guid: 3ca7e9dfc107e1b45ab8252046552443, type: 3}
-    answer: apple
+  - questionImage: {fileID: 21300000, guid: b6b4ed7c470963f4f836f72b1ecb2734, type: 3}
+    answer: back
   - questionImage: {fileID: 21300000, guid: 8ec642dc95a697144b4012cdfa9b84e6, type: 3}
     answer: banana
   - questionImage: {fileID: 21300000, guid: 8556c2364b133d2498805e725aac49ef, type: 3}
