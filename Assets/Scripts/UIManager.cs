@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("PlayButton Basildi");
 
-        SceneManager.LoadScene("GameScene");
+        // Load cinematic scene first
+        SceneManager.LoadScene("CinematicScene");
     }
 
     public void OptionsButton()
