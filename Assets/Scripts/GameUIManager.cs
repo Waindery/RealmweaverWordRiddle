@@ -12,7 +12,7 @@ public class GameUIManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void Level1Button ()
+    public void Level1Button()
     {
         Debug.Log("Level1Button Basildi");
 
@@ -24,5 +24,26 @@ public class GameUIManager : MonoBehaviour
         Debug.Log("Level2Button Basildi");
 
         SceneManager.LoadScene("Sample2Scene");
+    }
+
+    public void Level3Button()
+    {
+        Debug.Log("Level3Button Basildi");
+
+        SceneManager.LoadScene("Sample3Scene");
+    }
+
+    public void Level4Button()
+    {
+        Debug.Log("Level4Button Basildi");
+
+        SceneManager.LoadScene("Sample4Scene");
+    }
+
+    public void Level5Button()
+    {
+        Debug.Log("Level5Button Basildi");
+
+        SceneManager.LoadScene("Sample5Scene");
     }
 }

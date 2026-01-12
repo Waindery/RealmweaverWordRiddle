@@ -140,7 +140,7 @@ public class QuizManager : MonoBehaviour
                 {
                     Debug.Log("Game Complete");
                     gameComplete.SetActive(true);
-                    SceneManager.LoadScene("Game2Scene");
+                    LoadNextScene();
                 }
             }
         }
@@ -157,6 +157,34 @@ public class QuizManager : MonoBehaviour
             currentAnswerIndex--;
             answerWordList[currentAnswerIndex].SetWord('_');
         }
+    }
+
+    private void LoadNextScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        string nextSceneName = "";
+
+        // Mevcut scene'e göre bir sonraki scene'i belirle
+        switch (currentSceneName)
+        {
+            case "SampleScene": // Level 1
+                nextSceneName = "Game2Scene";
+                break;
+            case "Sample2Scene": // Level 2
+                nextSceneName = "Game3Scene";
+                break;
+            case "Sample3Scene": // Level 3
+                nextSceneName = "MainScene"; // veya Game4Scene varsa onu kullan
+                break;
+            default:
+                // Eğer bilinmeyen bir scene'deyse varsayılan olarak Game2Scene'e git
+                nextSceneName = "Game2Scene";
+                Debug.LogWarning($"Unknown scene: {currentSceneName}, loading Game2Scene as default");
+                break;
+        }
+
+        Debug.Log($"Level completed! Loading next scene: {nextSceneName}");
+        SceneManager.LoadScene(nextSceneName);
     }
 
 }

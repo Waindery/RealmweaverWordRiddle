@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b762a7796d94449896cd40528add32, type: 3}
+  m_Name: Level2Data
+  m_EditorClassIdentifier: 
+  questions:
+  - questionImage: {fileID: 21300000, guid: cacbde613034b9e49b8ca547c764fd4f, type: 3}
+    answer: helmet
+  - questionImage: {fileID: 21300000, guid: 799b0e97127028a418697fb265d28bd0, type: 3}
+    answer: lotus
+  - questionImage: {fileID: 21300000, guid: cda047c85c9f7a54c9deba8cb0bcd9e9, type: 3}
+    answer: sheep
+  - questionImage: {fileID: 21300000, guid: e20b8c887576c5f479a79322c064d1b2, type: 3}
+    answer: spear
+  - questionImage: {fileID: 21300000, guid: 341247e3a175d7c4b8c71327735efcc5, type: 3}
+    answer: sword
+  - questionImage: {fileID: 21300000, guid: 3183b78c0516b9d4e9b6f55e938019f6, type: 3}
+    answer: "w\u0131ne"
+  - questionImage: {fileID: 21300000, guid: 8ce0dac6ddfefe848b9da6582d549bdc, type: 3}
+    answer: rabbit
