@@ -44,6 +44,6 @@ public class GameUIManager : MonoBehaviour
     {
         Debug.Log("Level5Button Basildi");
 
-        SceneManager.LoadScene("Sample5Scene");
+        SceneManager.LoadScene("Cinematic5Scene");
     }
 }

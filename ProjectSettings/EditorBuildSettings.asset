@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cinematic4Scene.unity
     guid: 0a621fc2c41a5004b80973d16c220621
+  - enabled: 1
+    path: Assets/Scenes/Cinematic5Scene.unity
+    guid: 66731ed00a05c88428db174f93aa7f7e
+  - enabled: 1
+    path: Assets/Scenes/Cinematic6Scene.unity
+    guid: 47909165227899c4389083cb10a8b77b
+  - enabled: 1
+    path: Assets/Scenes/Cinematic7Scene.unity
+    guid: d4b22e41f01dd054fa1f4df42b0cd1b2
   m_configObjects: {}

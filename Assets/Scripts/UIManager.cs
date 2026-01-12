@@ -50,6 +50,27 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public void Continue5Button()
+    {
+        Debug.Log("Continue5Button Basildi");
+
+        SceneManager.LoadScene("Cinematic6Scene");
+    }
+
+    public void Continue6Button()
+    {
+        Debug.Log("Continue4Button Basildi");
+
+        SceneManager.LoadScene("Cinematic7Scene");
+    }
+
+    public void Continue7Button()
+    {
+        Debug.Log("Continue4Button Basildi");
+
+        SceneManager.LoadScene("MainScene");
+    }
+
     public void ExitButton()
     {
         Debug.Log("ExitButton Basildi");
