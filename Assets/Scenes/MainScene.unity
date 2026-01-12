@@ -1483,6 +1483,9 @@ MonoBehaviour:
   mainMenuClip: {fileID: 8300000, guid: ce60e88d3fc79e448a4f86ef4213f594, type: 3}
   levelSelectionClip: {fileID: 8300000, guid: 1bc5d69aafbeffe40bf2cbfef9b4c2ec, type: 3}
   gameClip: {fileID: 8300000, guid: fb16099bc3317e84da6dfbbd8358bc84, type: 3}
+  mainMenuVolume: 0.1
+  levelSelectionVolume: 0.1
+  gameVolume: 0.3
 --- !u!4 &1876880549
 Transform:
   m_ObjectHideFlags: 0

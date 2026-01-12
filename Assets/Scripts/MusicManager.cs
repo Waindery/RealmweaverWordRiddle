@@ -14,6 +14,14 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip levelSelectionClip; // GameScene, Game2Scene, Game3Scene, Game4Scene
     [SerializeField] private AudioClip gameClip;          // SampleScene, Sample2Scene, Sample3Scene, Sample4Scene
 
+    [Header("Volume Settings")]
+    [Range(0f, 1f)]
+    [SerializeField] private float mainMenuVolume = 1f;         // MainMenu.mp3 ses seviyesi (0-1 arası)
+    [Range(0f, 1f)]
+    [SerializeField] private float levelSelectionVolume = 1f;   // LevelSelection.mp3 ses seviyesi (0-1 arası)
+    [Range(0f, 1f)]
+    [SerializeField] private float gameVolume = 1f;             // Game.mp3 ses seviyesi (0-1 arası)
+
     private AudioSource _audioSource;
     private float gameMusicTime = 0f; // Game.mp3'in kaldığı pozisyonu sakla
 
@@ -65,6 +73,68 @@ public class MusicManager : MonoBehaviour
         {
             gameMusicTime = _audioSource.time;
         }
+
+        // Her müziğin kendi volume ayarını AudioSource'a uygula
+        if (_audioSource.clip == mainMenuClip && _audioSource.isPlaying)
+        {
+            _audioSource.volume = mainMenuVolume;
+        }
+        else if (_audioSource.clip == levelSelectionClip && _audioSource.isPlaying)
+        {
+            _audioSource.volume = levelSelectionVolume;
+        }
+        else if (_audioSource.clip == gameClip && _audioSource.isPlaying)
+        {
+            _audioSource.volume = gameVolume;
+        }
+    }
+
+    /// <summary>
+    /// MainMenu müziğinin ses seviyesini ayarlar (0-1 arası)
+    /// </summary>
+    public void SetMainMenuVolume(float volume)
+    {
+        mainMenuVolume = Mathf.Clamp01(volume);
+    }
+
+    /// <summary>
+    /// LevelSelection müziğinin ses seviyesini ayarlar (0-1 arası)
+    /// </summary>
+    public void SetLevelSelectionVolume(float volume)
+    {
+        levelSelectionVolume = Mathf.Clamp01(volume);
+    }
+
+    /// <summary>
+    /// Game müziğinin ses seviyesini ayarlar (0-1 arası)
+    /// </summary>
+    public void SetGameVolume(float volume)
+    {
+        gameVolume = Mathf.Clamp01(volume);
+    }
+
+    /// <summary>
+    /// MainMenu müziğinin ses seviyesini döndürür
+    /// </summary>
+    public float GetMainMenuVolume()
+    {
+        return mainMenuVolume;
+    }
+
+    /// <summary>
+    /// LevelSelection müziğinin ses seviyesini döndürür
+    /// </summary>
+    public float GetLevelSelectionVolume()
+    {
+        return levelSelectionVolume;
+    }
+
+    /// <summary>
+    /// Game müziğinin ses seviyesini döndürür
+    /// </summary>
+    public float GetGameVolume()
+    {
+        return gameVolume;
     }
 
     private void PlayForScene(string sceneName)
@@ -84,12 +154,13 @@ public class MusicManager : MonoBehaviour
         {
             target = levelSelectionClip;
         }
-        // Gameplay music (SampleScene'ler + Cinematic3Scene) - Scene'ler arasında devam eder
+        // Gameplay music (SampleScene'ler + Cinematic3Scene + Cinematic4Scene) - Scene'ler arasında devam eder
         else if (sceneName == "SampleScene"
                  || sceneName == "Sample2Scene"
                  || sceneName == "Sample3Scene"
                  || sceneName == "Sample4Scene"
-                 || sceneName == "Cinematic3Scene")
+                 || sceneName == "Cinematic3Scene"
+                 || sceneName == "Cinematic4Scene")
         {
             target = gameClip;
         }
@@ -121,6 +192,7 @@ public class MusicManager : MonoBehaviour
             // LevelSelection.mp3'e geç
             _audioSource.clip = levelSelectionClip;
             _audioSource.time = 0f; // Baştan başla
+            _audioSource.volume = levelSelectionVolume;
             _audioSource.Play();
             return;
         }
@@ -137,6 +209,7 @@ public class MusicManager : MonoBehaviour
             // Game.mp3'i kaldığı yerden devam ettir
             _audioSource.clip = gameClip;
             _audioSource.time = gameMusicTime;
+            _audioSource.volume = gameVolume;
             _audioSource.Play();
             return;
         }
@@ -151,6 +224,7 @@ public class MusicManager : MonoBehaviour
 
             _audioSource.clip = mainMenuClip;
             _audioSource.time = 0f;
+            _audioSource.volume = mainMenuVolume;
             _audioSource.Play();
         }
     }

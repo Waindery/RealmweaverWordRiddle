@@ -2933,6 +2933,9 @@ MonoBehaviour:
   correctSoundClip: {fileID: 8300000, guid: be86d9196da6f1948910496c0ceb3230, type: 3}
   wrongSoundClip: {fileID: 8300000, guid: 0cefc2455d72de64faa4b3ab53daf724, type: 3}
   wololoSoundClip: {fileID: 8300000, guid: 4e9732a4a82ca1f4e996135aca5b8a87, type: 3}
+  correctSoundVolume: 0.1
+  wrongSoundVolume: 0.1
+  wololoSoundVolume: 0.3
 --- !u!1 &1745157100
 GameObject:
   m_ObjectHideFlags: 0

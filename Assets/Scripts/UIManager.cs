@@ -29,7 +29,11 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Continue2Button Basildi");
 
-        SceneManager.LoadScene("GameScene");
+        // Kaydedilmiş GameScene'i al, yoksa varsayılan olarak GameScene
+        string targetScene = GameProgressManager.GetLastGameScene();
+        Debug.Log($"Loading saved GameScene: {targetScene}");
+        
+        SceneManager.LoadScene(targetScene);
     }
 
     public void Continue3Button()
@@ -37,6 +41,13 @@ public class UIManager : MonoBehaviour
         Debug.Log("Continue3Button Basildi");
 
         SceneManager.LoadScene("Game4Scene");
+    }
+
+    public void Continue4Button()
+    {
+        Debug.Log("Continue4Button Basildi");
+
+        SceneManager.LoadScene("MainScene");
     }
 
     public void ExitButton()

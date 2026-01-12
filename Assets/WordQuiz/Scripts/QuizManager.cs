@@ -18,6 +18,15 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private AudioClip correctSoundClip;    //sound clip to play when answer is correct
     [SerializeField] private AudioClip wrongSoundClip;      //sound clip to play when answer is wrong
     [SerializeField] private AudioClip wololoSoundClip;     //sound clip to play when game is completed
+    
+    [Header("Sound Effect Volumes")]
+    [Range(0f, 1f)]
+    [SerializeField] private float correctSoundVolume = 1f;    // Correct.wav ses seviyesi
+    [Range(0f, 1f)]
+    [SerializeField] private float wrongSoundVolume = 1f;      // Wrong.mp3 ses seviyesi
+    [Range(0f, 1f)]
+    [SerializeField] private float wololoSoundVolume = 1f;     // Wololo.mp3 ses seviyesi
+    
     private AudioSource audioSource;                        //audio source component for playing sounds
 
 
@@ -190,7 +199,7 @@ public class QuizManager : MonoBehaviour
     {
         if (correctSoundClip != null && audioSource != null)
         {
-            audioSource.PlayOneShot(correctSoundClip);
+            audioSource.PlayOneShot(correctSoundClip, correctSoundVolume);
         }
     }
 
@@ -198,7 +207,7 @@ public class QuizManager : MonoBehaviour
     {
         if (wrongSoundClip != null && audioSource != null)
         {
-            audioSource.PlayOneShot(wrongSoundClip);
+            audioSource.PlayOneShot(wrongSoundClip, wrongSoundVolume);
         }
     }
 
@@ -221,7 +230,7 @@ public class QuizManager : MonoBehaviour
                 nextSceneName = "Cinematic3Scene"; // ara sahne
                 break;
             case "Sample4Scene": // Level 4
-                nextSceneName = "Game4Scene"; // Tekrar Game4Scene'e dön
+                nextSceneName = "Cinematic4Scene";
                 break;
             default:
                 // Eğer bilinmeyen bir scene'deyse varsayılan olarak Game2Scene'e git
@@ -233,13 +242,17 @@ public class QuizManager : MonoBehaviour
         // Wololo sesini çal
         if (wololoSoundClip != null && audioSource != null)
         {
-            audioSource.PlayOneShot(wololoSoundClip);
+            audioSource.PlayOneShot(wololoSoundClip, wololoSoundVolume);
             
             // Sesin bitmesini bekle
             yield return new WaitForSeconds(wololoSoundClip.length);
         }
 
         Debug.Log($"Level completed! Loading next scene: {nextSceneName}");
+        
+        // İlerlemeyi kaydet
+        GameProgressManager.OnLevelCompleted(currentSceneName);
+        
         SceneManager.LoadScene(nextSceneName);
     }
 
