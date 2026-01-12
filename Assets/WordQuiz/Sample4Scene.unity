@@ -2535,7 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e4bf756c64990949a3d088e23dbb557, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ee8293268717bb41acdfb30c5a107ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2907,7 +2907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameComplete: {fileID: 352663270}
-  questionDataScriptable: {fileID: 11400000, guid: 4756c160bf2085e49b073708867f85c2, type: 2}
+  questionDataScriptable: {fileID: 11400000, guid: 536e62fb001719d42adffd489c834011, type: 2}
   questionImage: {fileID: 1170507036}
   answerWordList:
   - {fileID: 3837193637257813728}

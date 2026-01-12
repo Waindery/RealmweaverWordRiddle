@@ -15,6 +15,10 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Image questionImage;           //image element to show the image
     [SerializeField] private WordData[] answerWordList;     //list of answers word in the game
     [SerializeField] private WordData[] optionsWordList;    //list of options word in the game
+    [SerializeField] private AudioClip correctSoundClip;    //sound clip to play when answer is correct
+    [SerializeField] private AudioClip wrongSoundClip;      //sound clip to play when answer is wrong
+    [SerializeField] private AudioClip wololoSoundClip;     //sound clip to play when game is completed
+    private AudioSource audioSource;                        //audio source component for playing sounds
 
 
     private GameStatus gameStatus = GameStatus.Playing;     //to keep track of game status
@@ -37,6 +41,15 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         selectedWordsIndex = new List<int>();           //create a new list at start
+        
+        // AudioSource component'ini al veya ekle
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+        
         SetQuestion();                                  //set question
     }
 
@@ -129,19 +142,33 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                
                 gameStatus = GameStatus.Next;
                 currentQuestionIndex++;
 
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                    // Doğru cevap sesini çal (son soru değilse)
+                    PlayCorrectSound();
                     Invoke("SetQuestion", 0.5f);
                 }
                 else
                 {
                     Debug.Log("Game Complete");
-                    gameComplete.SetActive(true);
-                    LoadNextScene();
+                    // GameComplete ekranını gösterme, sadece Wololo sesini çal
+                    
+                    // Scene geçişinden önce Wololo sesini çal ve bekle
+                    StartCoroutine(LoadNextSceneWithWololo());
                 }
+            }
+            else
+            {
+                Debug.Log("Wrong Answer");
+                
+                // Yanlış cevap sesini çal
+                PlayWrongSound();
+                
+                // Kelime ekranda kalacak, kullanıcı silme/geri alma tuşlarını kullanabilir
             }
         }
     }
@@ -159,7 +186,24 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    private void LoadNextScene()
+    private void PlayCorrectSound()
+    {
+        if (correctSoundClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(correctSoundClip);
+        }
+    }
+
+    private void PlayWrongSound()
+    {
+        if (wrongSoundClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(wrongSoundClip);
+        }
+    }
+
+
+    private IEnumerator LoadNextSceneWithWololo()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         string nextSceneName = "";
@@ -174,13 +218,25 @@ public class QuizManager : MonoBehaviour
                 nextSceneName = "Game3Scene";
                 break;
             case "Sample3Scene": // Level 3
-                nextSceneName = "MainScene"; // veya Game4Scene varsa onu kullan
+                nextSceneName = "Game4Scene";
+                break;
+            case "Sample4Scene": // Level 4
+                nextSceneName = "Game4Scene"; // Tekrar Game4Scene'e dön
                 break;
             default:
                 // Eğer bilinmeyen bir scene'deyse varsayılan olarak Game2Scene'e git
                 nextSceneName = "Game2Scene";
                 Debug.LogWarning($"Unknown scene: {currentSceneName}, loading Game2Scene as default");
                 break;
+        }
+
+        // Wololo sesini çal
+        if (wololoSoundClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(wololoSoundClip);
+            
+            // Sesin bitmesini bekle
+            yield return new WaitForSeconds(wololoSoundClip.length);
         }
 
         Debug.Log($"Level completed! Loading next scene: {nextSceneName}");

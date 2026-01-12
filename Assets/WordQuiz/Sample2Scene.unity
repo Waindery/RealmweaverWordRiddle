@@ -292,6 +292,9 @@ MonoBehaviour:
   - {fileID: 403121259}
   - {fileID: 1851999719}
   - {fileID: 1198112498}
+  correctSoundClip: {fileID: 8300000, guid: be86d9196da6f1948910496c0ceb3230, type: 3}
+  wrongSoundClip: {fileID: 8300000, guid: 0cefc2455d72de64faa4b3ab53daf724, type: 3}
+  wololoSoundClip: {fileID: 8300000, guid: 4e9732a4a82ca1f4e996135aca5b8a87, type: 3}
 --- !u!4 &115415078
 Transform:
   m_ObjectHideFlags: 0

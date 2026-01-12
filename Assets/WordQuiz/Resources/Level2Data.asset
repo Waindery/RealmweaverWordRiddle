@@ -25,5 +25,3 @@ MonoBehaviour:
     answer: sword
   - questionImage: {fileID: 21300000, guid: 3183b78c0516b9d4e9b6f55e938019f6, type: 3}
     answer: "w\u0131ne"
-  - questionImage: {fileID: 21300000, guid: 8ce0dac6ddfefe848b9da6582d549bdc, type: 3}
-    answer: rabbit
