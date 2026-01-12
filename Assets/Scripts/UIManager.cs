@@ -32,6 +32,13 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void Continue3Button()
+    {
+        Debug.Log("Continue3Button Basildi");
+
+        SceneManager.LoadScene("Game4Scene");
+    }
+
     public void ExitButton()
     {
         Debug.Log("ExitButton Basildi");

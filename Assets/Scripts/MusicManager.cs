@@ -84,11 +84,12 @@ public class MusicManager : MonoBehaviour
         {
             target = levelSelectionClip;
         }
-        // Gameplay music (SampleScene'ler) - Scene'ler arasında devam eder
+        // Gameplay music (SampleScene'ler + Cinematic3Scene) - Scene'ler arasında devam eder
         else if (sceneName == "SampleScene"
                  || sceneName == "Sample2Scene"
                  || sceneName == "Sample3Scene"
-                 || sceneName == "Sample4Scene")
+                 || sceneName == "Sample4Scene"
+                 || sceneName == "Cinematic3Scene")
         {
             target = gameClip;
         }

@@ -218,7 +218,7 @@ public class QuizManager : MonoBehaviour
                 nextSceneName = "Game3Scene";
                 break;
             case "Sample3Scene": // Level 3
-                nextSceneName = "Game4Scene";
+                nextSceneName = "Cinematic3Scene"; // ara sahne
                 break;
             case "Sample4Scene": // Level 4
                 nextSceneName = "Game4Scene"; // Tekrar Game4Scene'e dön
